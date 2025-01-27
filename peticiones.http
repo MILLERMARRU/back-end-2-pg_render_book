@@ -1,0 +1,32 @@
+###
+GET http://localhost:3000/api HTTP/1.1
+
+###
+GET http://localhost:3000/api/2 HTTP/1.1
+
+###
+POST http://localhost:3000/api HTTP/1.1
+Content-Type: application/json
+
+{
+  "autor": "borardor borrador",
+  "titulo": "El borador de la selva",
+  "edicion": 2
+
+}
+
+###
+PUT http://localhost:3000/api/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "autor": "Miller Zamora",
+  "titulo": "El libro de la selva",
+  "edicion": 2
+
+}
+
+###
+DELETE http://localhost:3000/api/3 HTTP/1.1
+
+
