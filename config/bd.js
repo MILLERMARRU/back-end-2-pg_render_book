@@ -8,7 +8,15 @@ const db = new Pool({
     database: process.env.DB_NAME,
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
+    ssl: {
+        rejectUnauthorized: false      // Permite conexiones sin certificado válido (usado en entornos de prueba)
+    }
 });
+
+// Conectar y manejar errores
+db.connect()
+    .then(() => console.log('Conexión exitosa a PostgreSQL'))
+    .catch(err => console.error('Error al conectar a PostgreSQL:', err.stack));
 
 // Crear tabla automáticamente si no existe
 const createTableQuery = `
